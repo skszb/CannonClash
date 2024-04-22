@@ -8,6 +8,7 @@ TagManager:
   - PirateMinion
   - PlayerShip
   - cannon
+  - CannonBall
   layers:
   - Default
   - TransparentFX
