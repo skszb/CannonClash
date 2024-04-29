@@ -9,6 +9,7 @@ TagManager:
   - PlayerShip
   - cannon
   - CannonBall
+  - xrcamera
   layers:
   - Default
   - TransparentFX

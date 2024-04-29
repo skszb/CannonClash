@@ -5,12 +5,13 @@ using UnityEngine;
 public class boat : MonoBehaviour
 {
     public float life;
+    public int ammo;
     
     // Start is called before the first frame update
     void Start()
     {
-        //default is 100, can also be set after spawn for pirate ships
         life = 100.0f;
+        ammo = 0;
     }
 
     // Update is called once per frame
@@ -25,20 +26,9 @@ public class boat : MonoBehaviour
 
     public void damage(float d) {
         life -= d;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("CannonBall"))
+        if (life <= 0) 
         {
-            // update life after hit by cannon ball
-        }
-
-        if (collision.gameObject.CompareTag("PlayerShip"))
-        {
-            // pirate ship collides with player ship
-            boat b = collision.gameObject.GetComponent<boat>();
-            b.damage(10); // change after cannon ball and damage system is implemented
+            // game over and die
             Die();
         }
     }
