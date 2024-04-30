@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class Global : MonoBehaviour
 {
@@ -11,23 +12,32 @@ public class Global : MonoBehaviour
     private float spawnTimer;
     private float spawnPeriod;
     private int numberSpawnedEachPeriod;
+    private List<int> spaceChecker;
 
     // game difficulty increment
     private float gameTimer;
     private float gamePeriod;
 
     // score tracking
-    public int score;
+    private int score;
+    public TextMeshProUGUI tmp;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnTimer = Random.Range(5f, 7f);
-        spawnPeriod = 15f;
+        spawnPeriod = 20f;
         numberSpawnedEachPeriod = 1;
         gameTimer = 0;
-        gamePeriod = 30f;
+        gamePeriod = 60f;
         score = 0;
+        tmp.text = 0.ToString();
+
+        spaceChecker = new List<int>();
+        for (int i = 0; i < 16; i++)
+        {
+            spaceChecker.Add(0);
+        }
     }
 
     // Update is called once per frame
@@ -49,11 +59,6 @@ public class Global : MonoBehaviour
 
     private void Spawn()
     {
-        List<int> spaceChecker = new List<int>();
-        for (int i = 0; i < 13; i++)
-        {
-            spaceChecker.Add(0);
-        }
         int leftNum = 0;
         int rightNum = 0;
         if (numberSpawnedEachPeriod > 1)
@@ -77,12 +82,14 @@ public class Global : MonoBehaviour
         {
             bool find = false;
             int posZ = 0;
+            HashSet<int> spawned = new HashSet<int>();
             while (!find)
             {
-                posZ = (int)Random.Range(2f, 12.5f);
-                if (spaceChecker[posZ] == 0)
+                posZ = (int)Random.Range(1f, 15.99f);
+                if (!spawned.Contains(posZ) && spaceChecker[posZ] >= 0)
                 {
-                    spaceChecker[posZ] = 1;
+                    spawned.Add(posZ);
+                    spaceChecker[posZ] += 1;
                     find = true;
                 }
             }
@@ -90,17 +97,20 @@ public class Global : MonoBehaviour
             GameObject obj = Instantiate(pirateShipL, spawnPos, Quaternion.Euler(0f, 90f, 0f)) as GameObject;
             pirate p = obj.GetComponent<pirate>();
             p.dir = 1f;
+            p.row = posZ;
         }
         for (int j = 0; j < rightNum; j++)
         {
             bool find = false;
             int posZ = 0;
+            HashSet<int> spawned = new HashSet<int>();
             while (!find)
             {
-                posZ = (int)Random.Range(2f, 12.5f);
-                if (spaceChecker[posZ] == 0)
+                posZ = (int)Random.Range(1f, 15.99f);
+                if (!spawned.Contains(posZ) && spaceChecker[posZ] <= 0)
                 {
-                    spaceChecker[posZ] = 1;
+                    spawned.Add(posZ);
+                    spaceChecker[posZ] -= 1;
                     find = true;
                 }
             }
@@ -108,6 +118,7 @@ public class Global : MonoBehaviour
             GameObject obj = Instantiate(pirateShipR, spawnPos, Quaternion.Euler(0f, -90f, 0f)) as GameObject;
             pirate p = obj.GetComponent<pirate>();
             p.dir = -1f;
+            p.row = posZ;
         }
     }
 
@@ -116,5 +127,21 @@ public class Global : MonoBehaviour
         spawnPeriod -= 2f;
         numberSpawnedEachPeriod += 1;
         gamePeriod += 30f;
+    }
+
+    public void increScore() 
+    {
+        score++;
+        tmp.text = score.ToString();
+    }
+
+    public void leftShipDestroy(int row) 
+    {
+        spaceChecker[row] -= 1;
+    }
+
+    public void rightShipDestroy(int row) 
+    {
+        spaceChecker[row] += 1;
     }
 }

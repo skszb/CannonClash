@@ -7,12 +7,15 @@ public class pirate : MonoBehaviour
 {
     public float life;
     public float dir;
+    public int row;
     private float curSpeed;
+    Global g;
 
     // Start is called before the first frame update
     void Start()
     {
         life = 100;
+        g = GameObject.Find("Global").GetComponent<Global>();
     }
 
     public void damage(float d)
@@ -20,6 +23,7 @@ public class pirate : MonoBehaviour
         life -= d;
         if (life <= 0)
         {
+            g.increScore();
             Die();
         }
     }
@@ -32,7 +36,7 @@ public class pirate : MonoBehaviour
             Die();
         }
 
-        if (transform.position.x >= -100 && transform.position.x <= 100)
+        if (transform.position.x >= -85 && transform.position.x <= 85)
         {
             curSpeed = 3 * dir;
         }
@@ -62,6 +66,14 @@ public class pirate : MonoBehaviour
 
     private void Die()
     {
+        if (dir == 1f)
+        {
+            g.leftShipDestroy(row);
+        }
+        else 
+        {
+            g.rightShipDestroy(row);
+        }
         Destroy(gameObject);
     }
 }

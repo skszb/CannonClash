@@ -27,8 +27,8 @@ public class CannonBall : MonoBehaviour
         if (collision.gameObject.CompareTag("PirateMinion"))
         {
             // Hit Pirate Minion
-            pirate b = collision.gameObject.GetComponent<pirate>();
-            b.damage(50);
+            pirate p = collision.gameObject.GetComponent<pirate>();
+            p.damage(50);
             Die();
         }
     }
@@ -46,5 +46,4 @@ public class CannonBall : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }
