@@ -332,3 +332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catchable: 0
+  strikeSound: {fileID: 8300000, guid: 9b0ab325c87e7254ea103c4aa95611c3, type: 3}
+  pirateOnHitEffect: {fileID: 1998830269065593993, guid: b70fbea4bc8994749ba52e4f560f9f28, type: 3}
+  playerOnHitEffect: {fileID: 3352391191284423565, guid: 9571e0e1b1e65834cbba759493c171d3, type: 3}

@@ -1981,6 +1981,8 @@ MonoBehaviour:
   Cannonball: {fileID: 5788078841862888594, guid: 6f7c7411c65919443860b21baf249da8, type: 3}
   Shotpoint: {fileID: 7561004260967905732}
   Blastpower: 20
+  cannonShootSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  shootingSmokeEffect: {fileID: 7187393024123294025, guid: 5f2bc166e68df974bb952c4ec5c43454, type: 3}
 --- !u!1 &4943833816226720310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,8 +3120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028ceb965f325e148902da08961eb313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  speed: 0
+  dir: 0
+  row: 0
+  finalExplosionEffect: {fileID: 560014183069458990, guid: 621e45f610d611746802ad828f66b094, type: 3}
 --- !u!1 &6800780610164668765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,6 +4001,8 @@ MonoBehaviour:
   Cannonball: {fileID: 5788078841862888594, guid: 6f7c7411c65919443860b21baf249da8, type: 3}
   Shotpoint: {fileID: 2235734045665286366}
   Blastpower: 20
+  cannonShootSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  shootingSmokeEffect: {fileID: 7187393024123294025, guid: 5f2bc166e68df974bb952c4ec5c43454, type: 3}
 --- !u!1 &8267579654747051269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,3 +4426,5 @@ MonoBehaviour:
   Cannonball: {fileID: 5788078841862888594, guid: 6f7c7411c65919443860b21baf249da8, type: 3}
   Shotpoint: {fileID: 3091501422583440739}
   Blastpower: 20
+  cannonShootSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  shootingSmokeEffect: {fileID: 7187393024123294025, guid: 5f2bc166e68df974bb952c4ec5c43454, type: 3}

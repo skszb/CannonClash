@@ -383,8 +383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028ceb965f325e148902da08961eb313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  speed: 0
+  dir: 0
+  row: 0
+  finalExplosionEffect: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
 --- !u!1001 &45298817107300871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -461,6 +462,14 @@ PrefabInstance:
       propertyPath: Blastpower
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8682604181943317958, guid: cf7124acf5b35644896df7afc1b46d5c, type: 3}
+      propertyPath: cannonShootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+    - target: {fileID: 8682604181943317958, guid: cf7124acf5b35644896df7afc1b46d5c, type: 3}
+      propertyPath: shootingSmokeEffect
+      value: 
+      objectReference: {fileID: 7187393024123294025, guid: 5f2bc166e68df974bb952c4ec5c43454, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -668,6 +677,14 @@ PrefabInstance:
       propertyPath: Blastpower
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8682604181943317958, guid: cf7124acf5b35644896df7afc1b46d5c, type: 3}
+      propertyPath: cannonShootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+    - target: {fileID: 8682604181943317958, guid: cf7124acf5b35644896df7afc1b46d5c, type: 3}
+      propertyPath: shootingSmokeEffect
+      value: 
+      objectReference: {fileID: 7187393024123294025, guid: 5f2bc166e68df974bb952c4ec5c43454, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -754,6 +771,14 @@ PrefabInstance:
       propertyPath: Blastpower
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8682604181943317958, guid: cf7124acf5b35644896df7afc1b46d5c, type: 3}
+      propertyPath: cannonShootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+    - target: {fileID: 8682604181943317958, guid: cf7124acf5b35644896df7afc1b46d5c, type: 3}
+      propertyPath: shootingSmokeEffect
+      value: 
+      objectReference: {fileID: 7187393024123294025, guid: 5f2bc166e68df974bb952c4ec5c43454, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -22,10 +22,13 @@ public class Global : MonoBehaviour
     private int score;
     public TextMeshProUGUI tmp;
 
+    //background music
+    private AudioSource backgroundMusic;
+
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer = Random.Range(5f, 7f);
+        spawnTimer = Random.Range(10f, 15f);
         spawnPeriod = 20f;
         numberSpawnedEachPeriod = 1;
         gameTimer = 0;
@@ -38,6 +41,9 @@ public class Global : MonoBehaviour
         {
             spaceChecker.Add(0);
         }
+
+        backgroundMusic = GetComponent<AudioSource>();
+        playMusic();
     }
 
     // Update is called once per frame
@@ -143,5 +149,33 @@ public class Global : MonoBehaviour
     public void rightShipDestroy(int row) 
     {
         spaceChecker[row] += 1;
+    }
+
+    private void playMusic() 
+    {
+        if (!backgroundMusic.isPlaying)
+            backgroundMusic.Play();
+    }
+
+    private void stopMusic() 
+    {
+        if (backgroundMusic.isPlaying)
+            backgroundMusic.Stop();
+    }
+
+    public void gameOver() 
+    {
+        // clean up
+        CannonBall[] cannonballs = FindObjectsOfType<CannonBall>();
+        foreach (CannonBall obj in cannonballs)
+        {
+            Destroy(obj.gameObject);
+        }
+        pirate[] pirates = FindObjectsOfType<pirate>();
+        foreach (pirate obj in pirates)
+        {
+            Destroy(obj.gameObject);
+        }
+        stopMusic();
     }
 }

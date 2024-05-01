@@ -10,6 +10,7 @@ public class boat : MonoBehaviour
     private Image fillImage;
     public GameObject cannonBalls;
     private List<GameObject> cannonBallList;
+    public AudioClip playerShootSound;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class boat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void setLife(float l) {
@@ -37,12 +39,12 @@ public class boat : MonoBehaviour
     }
 
     public void damage(float d) {
-        life -= d;
-        life = Mathf.Max(life, 0f);
+        life = Mathf.Max(life - d, 0f);
         fillImage.fillAmount = life / 100f;
         if (life <= 0) 
         {
             // game over
+            GameObject.Find("Global").GetComponent<Global>().gameOver();
             Die();
         }
     }
@@ -53,19 +55,19 @@ public class boat : MonoBehaviour
 
     public void increAmmo() 
     {
-        ammo++;
-        if (ammo < 21) 
-        {
-            cannonBallList[ammo - 1].SetActive(true);
-        }
+        ammo = Mathf.Min(ammo + 1, 20);
+        cannonBallList[ammo - 1].SetActive(true);
     }
 
     public void decreAmmo() 
     {
-        ammo--;
-        if (ammo < 20) 
-        {
-            cannonBallList[Mathf.Max(ammo, 0)].SetActive(false);
-        }
+        ammo = Mathf.Max(ammo - 1, 0);
+        cannonBallList[Mathf.Max(ammo, 0)].SetActive(false);
+    }
+
+    public void playerShoot(Vector3 dir) 
+    {
+        AudioSource.PlayClipAtPoint(playerShootSound, new Vector3(0f, 5f, 5f));
+        /// shoot along dir
     }
 }

@@ -5,10 +5,11 @@ using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver.Primitives;
 
 public class pirate : MonoBehaviour
 {
-    public float life;
+    private float life;
     public float dir;
     public int row;
     private float curSpeed;
+    public GameObject finalExplosionEffect;
     Global g;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class pirate : MonoBehaviour
         if (life <= 0)
         {
             g.increScore();
+            GameObject obj = Instantiate(finalExplosionEffect, transform.position, Quaternion.identity) as GameObject;
             Die();
         }
     }

@@ -100,6 +100,7 @@ MonoBehaviour:
   Cannonball: {fileID: 5788078841862888594, guid: 6f7c7411c65919443860b21baf249da8, type: 3}
   Shotpoint: {fileID: 7173287165273725017}
   Blastpower: 40
+  cannonShootSound: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
 --- !u!1 &3380173479646624596
 GameObject:
   m_ObjectHideFlags: 0
