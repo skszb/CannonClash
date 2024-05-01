@@ -25,7 +25,7 @@ public class pirate : MonoBehaviour
         if (life <= 0)
         {
             g.increScore();
-            GameObject obj = Instantiate(finalExplosionEffect, transform.position, Quaternion.identity) as GameObject;
+            GameObject obj = Instantiate(finalExplosionEffect, transform.position + new Vector3(0f, 2.5f, 0f), Quaternion.identity) as GameObject;
             Die();
         }
     }

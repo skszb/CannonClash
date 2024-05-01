@@ -91,7 +91,7 @@ public class Global : MonoBehaviour
             HashSet<int> spawned = new HashSet<int>();
             while (!find)
             {
-                posZ = (int)Random.Range(1f, 15.99f);
+                posZ = (int)Random.Range(1f, 11.99f);
                 if (!spawned.Contains(posZ) && spaceChecker[posZ] >= 0)
                 {
                     spawned.Add(posZ);

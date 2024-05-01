@@ -47,6 +47,10 @@ public class boat : MonoBehaviour
             GameObject.Find("Global").GetComponent<Global>().gameOver();
             Die();
         }
+        for (int i = 0; i < 6; i++)
+        {
+            increAmmo();
+        }
     }
 
     private void Die() { 

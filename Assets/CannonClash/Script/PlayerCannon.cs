@@ -44,6 +44,7 @@ public class PlayerCannon : MonoBehaviour
         cannonAudioSource.Play();
         m_smokeParticleSystem.Play();
         GameObject createcannonball = Instantiate(Cannonball, Shotpoint.position, Shotpoint.rotation);
+        createcannonball.GetComponent<CannonBall>().Catch();
         createcannonball.GetComponent<Rigidbody>().velocity = Shotpoint.transform.up * Blastpower;
         if (ammoLimit)
         {
