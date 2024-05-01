@@ -26,7 +26,10 @@ public class Cannoncontroller : MonoBehaviour
     {
         // adjust audio source location and smoke effect spawn location accordingly
         AudioSource.PlayClipAtPoint(cannonShootSound, new Vector3(0f, 10f, 30f));
-        GameObject obj = Instantiate(shootingSmokeEffect, Shotpoint.position, Quaternion.identity) as GameObject;
+        if (shootingSmokeEffect)
+        {
+            GameObject obj = Instantiate(shootingSmokeEffect, Shotpoint.position, Quaternion.identity) as GameObject;
+        }
         GameObject createcannonball = Instantiate(Cannonball, Shotpoint.position, Shotpoint.rotation);
         createcannonball.GetComponent<Rigidbody>().velocity = Shotpoint.transform.up * Blastpower;
     }

@@ -8,6 +8,7 @@ public class CannonBall : MonoBehaviour
     // private XRGrabInteractable _grabInteractable;
 
     public bool catchable = true; // the b
+    [SerializeField] bool m_IsCatched = false;
     public AudioClip strikeSound;
     public GameObject pirateOnHitEffect;
     public GameObject playerOnHitEffect;
@@ -19,7 +20,7 @@ public class CannonBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerShip"))
+        if (!m_IsCatched && collision.gameObject.CompareTag("PlayerShip"))
         {
             // Hit Player Ship
             // adjust audio source location and on-hit explosion spawn location accordingly
@@ -51,8 +52,14 @@ public class CannonBall : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
+        Debug.Log("CannonBall::Die: Cannon Ball Destroyed");
         Destroy(gameObject);
     }
+
+    public void Catch()
+    {
+        m_IsCatched = true;
+    } 
 }

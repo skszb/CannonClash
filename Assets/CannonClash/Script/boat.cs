@@ -70,4 +70,9 @@ public class boat : MonoBehaviour
         AudioSource.PlayClipAtPoint(playerShootSound, new Vector3(0f, 5f, 5f));
         /// shoot along dir
     }
+
+    public int AmmoCount()
+    {
+        return ammo;
+    }
 }
