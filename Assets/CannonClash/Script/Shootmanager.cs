@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Shootmanager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private GameObject[] cannons;
+    [SerializeField] GameObject[] cannons;
 
    
     private float shootInterval = 5f;
@@ -13,7 +12,10 @@ public class Shootmanager : MonoBehaviour
     private float timeSinceLastShot = 0f;
     void Start()
     {
-        cannons = GameObject.FindGameObjectsWithTag("cannon");
+        if (cannons.Length == 0)
+        {
+            cannons = GameObject.FindGameObjectsWithTag("cannon");
+        }
     }
 
     // Update is called once per frame

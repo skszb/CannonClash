@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -61,16 +62,16 @@ using UnityEngine.XR.Interaction.Toolkit;
             Quaternion rotationToApply = Quaternion.FromToRotation(previousDirection, currentDirection);
             rotatingObject.rotation = rotationToApply * previousObjectRotation;
             
-            
             CorrectRotation();
         }
         
         // Correct the rotation around y-axis
         private void CorrectRotation()
         {
-            Vector3 currentUp = rotatingObject.up;
-            Quaternion correctiveRotation = Quaternion.FromToRotation(currentUp, Vector3.up);
-            rotatingObject.rotation = correctiveRotation * rotatingObject.rotation;
+            // trying to correct rotation while preserving pitch, will fix later
+            // Vector3 currentUp = rotatingObject.up;
+            // Quaternion correctiveRotation = Quaternion.FromToRotation(currentUp, Vector3.up);
+            // rotatingObject.rotation = correctiveRotation * rotatingObject.rotation;
         }
     }
     
