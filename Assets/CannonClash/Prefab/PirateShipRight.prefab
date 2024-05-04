@@ -3127,6 +3127,7 @@ MonoBehaviour:
   dir: 0
   row: 0
   finalExplosionEffect: {fileID: 560014183069458990, guid: 621e45f610d611746802ad828f66b094, type: 3}
+  shootmanager: {fileID: 6167418142242902870}
 --- !u!1 &6800780610164668765
 GameObject:
   m_ObjectHideFlags: 0

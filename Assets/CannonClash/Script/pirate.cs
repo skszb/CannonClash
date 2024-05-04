@@ -10,6 +10,7 @@ public class pirate : MonoBehaviour
     public int row;
     private float curSpeed;
     public GameObject finalExplosionEffect;
+    public GameObject shootmanager;
     Global g;
 
     // Start is called before the first frame update
@@ -77,5 +78,12 @@ public class pirate : MonoBehaviour
             g.rightShipDestroy(row);
         }
         Destroy(gameObject);
+    }
+
+    public void setpirateshotpower(float power)
+    {
+        Shootmanager controller = shootmanager.GetComponent<Shootmanager>();
+        controller.setshootpower(power);
+
     }
 }

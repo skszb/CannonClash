@@ -390,6 +390,7 @@ MonoBehaviour:
   dir: 0
   row: 0
   finalExplosionEffect: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+  shootmanager: {fileID: 6591017389446777971}
 --- !u!1001 &45298817107300871
 PrefabInstance:
   m_ObjectHideFlags: 0

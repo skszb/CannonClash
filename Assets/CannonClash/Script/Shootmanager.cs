@@ -46,4 +46,14 @@ public class Shootmanager : MonoBehaviour
             controller.shoot();
         }
     }
+
+   public void setshootpower(float power)
+    {
+        for (int i = 0; i < cannons.Length; i++)
+        {
+            GameObject cannon = cannons[i];
+            Cannoncontroller controller = cannon.GetComponent<Cannoncontroller>();
+            controller.Blastpower = power;
+        }
+    }
 }

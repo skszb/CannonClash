@@ -91,7 +91,7 @@ public class Global : MonoBehaviour
             HashSet<int> spawned = new HashSet<int>();
             while (!find)
             {
-                posZ = (int)Random.Range(1f, 11.99f);
+                posZ = (int)Random.Range(2f, 8.99f);
                 if (!spawned.Contains(posZ) && spaceChecker[posZ] >= 0)
                 {
                     spawned.Add(posZ);
@@ -99,9 +99,40 @@ public class Global : MonoBehaviour
                     find = true;
                 }
             }
-            Vector3 spawnPos = new Vector3(Random.Range(-250f, -200f), 0f, posZ * 10f);
+            Vector3 spawnPos = new Vector3(Random.Range(-250f, -200f), 0f, posZ * 7f);
             GameObject obj = Instantiate(pirateShipL, spawnPos, Quaternion.Euler(0f, 90f, 0f)) as GameObject;
             pirate p = obj.GetComponent<pirate>();
+            float number = 0;
+            if (posZ == 2)
+            {
+                number = Random.Range(9.5f, 10f);
+                
+            }
+            else if (posZ==3)
+            {
+                number = Random.Range(13.5f, 14f);
+            }
+            else if (posZ == 4)
+            {
+                number = Random.Range(16.5f, 17f);
+            }
+            else if (posZ == 5)
+            {
+                number = Random.Range(18.5f, 19f);
+            }
+            else if(posZ == 6)
+            {
+                number = Random.Range(20.5f, 21f);
+            }
+            else if (posZ == 7)
+            {
+                number = Random.Range(22.5f, 23f);
+            }
+            else if (posZ == 8)
+            {
+                number = Random.Range(24.5f, 25f);
+            }
+            p.setpirateshotpower(number);
             p.dir = 1f;
             p.row = posZ;
         }
@@ -112,7 +143,7 @@ public class Global : MonoBehaviour
             HashSet<int> spawned = new HashSet<int>();
             while (!find)
             {
-                posZ = (int)Random.Range(1f, 15.99f);
+                posZ = (int)Random.Range(2f, 8.99f);
                 if (!spawned.Contains(posZ) && spaceChecker[posZ] <= 0)
                 {
                     spawned.Add(posZ);
@@ -120,9 +151,40 @@ public class Global : MonoBehaviour
                     find = true;
                 }
             }
-            Vector3 spawnPos = new Vector3(Random.Range(200f, 250f), 0f, posZ * 10f);
+            Vector3 spawnPos = new Vector3(Random.Range(200f, 250f), 0f, posZ * 7f);
             GameObject obj = Instantiate(pirateShipR, spawnPos, Quaternion.Euler(0f, -90f, 0f)) as GameObject;
             pirate p = obj.GetComponent<pirate>();
+            float number = 0;
+            if (posZ == 2)
+            {
+                number = Random.Range(9.5f, 10f);
+
+            }
+            else if (posZ == 3)
+            {
+                number = Random.Range(13.5f, 14f);
+            }
+            else if (posZ == 4)
+            {
+                number = Random.Range(16.5f, 17f);
+            }
+            else if (posZ == 5)
+            {
+                number = Random.Range(18.5f, 19f);
+            }
+            else if (posZ == 6)
+            {
+                number = Random.Range(20.5f, 21f);
+            }
+            else if (posZ == 7)
+            {
+                number = Random.Range(22.5f, 23f);
+            }
+            else if (posZ == 8)
+            {
+                number = Random.Range(24.5f, 25f);
+            }
+            p.setpirateshotpower(number);
             p.dir = -1f;
             p.row = posZ;
         }
