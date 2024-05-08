@@ -502,7 +502,6 @@ Transform:
   - {fileID: 3115597235791543922}
   - {fileID: 8282087739054076608}
   - {fileID: 1104768495558189024}
-  - {fileID: 3352167557939706476}
   m_Father: {fileID: 5053523913758487771}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1600699110357685598
@@ -2564,54 +2563,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6167418142242902870
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3352167557939706476}
-  - component: {fileID: 5476187255488435137}
-  m_Layer: 0
-  m_Name: cannonmanager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3352167557939706476
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6167418142242902870}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.486259, y: -7.199338, z: -19.494244}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7678822598994227738}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5476187255488435137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6167418142242902870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af207967b19c2914d9f56f6422206730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cannons:
-  - {fileID: 8113389937081999549}
-  - {fileID: 8835857262192373299}
-  - {fileID: 8835857262192373299}
 --- !u!1 &6373716371831110515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,7 +3078,7 @@ MonoBehaviour:
   dir: 0
   row: 0
   finalExplosionEffect: {fileID: 560014183069458990, guid: 621e45f610d611746802ad828f66b094, type: 3}
-  shootmanager: {fileID: 6167418142242902870}
+  shootmanager: {fileID: 0}
 --- !u!1 &6800780610164668765
 GameObject:
   m_ObjectHideFlags: 0

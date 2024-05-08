@@ -21,7 +21,14 @@ public class Cannoncontroller : MonoBehaviour
         }
     }*/
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("CannonTrigger"))
+        {
 
+            shoot();
+        }
+    }
     public void shoot()
     {
         // adjust audio source location and smoke effect spawn location accordingly
