@@ -78,7 +78,7 @@ using UnityEngine.XR.Interaction.Toolkit;
             powerRatio = translateRatio + 0.5f;
             translateRatio *= 0.7f;
 
-            Vector3 translationToApply = translateRatio * previousDirection.normalized;
+            Vector3 translationToApply = translateRatio * currentDirection.normalized;
             rotatingObject.position = previouseObjectPosition + translationToApply;
             
         }
