@@ -929,6 +929,11 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &1092610823 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3069792930607365735, guid: a3d583801cb584945af9f9617b897756, type: 3}
+  m_PrefabInstance: {fileID: 4500764632539684477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1102913321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1017,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4334666633506811281, guid: 600eb2782c48a7b4b8d7d5fce6769ac9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795560332029710895, guid: 600eb2782c48a7b4b8d7d5fce6769ac9, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6952,6 +6961,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2706133927162165598, guid: a3d583801cb584945af9f9617b897756, type: 3}
+      propertyPath: cannonAudioSource
+      value: 
+      objectReference: {fileID: 1092610823}
     - target: {fileID: 6452665286916991980, guid: a3d583801cb584945af9f9617b897756, type: 3}
       propertyPath: m_Name
       value: PlayerCannon

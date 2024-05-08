@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TreeEditor;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -13,7 +15,10 @@ using UnityEngine.XR.Interaction.Toolkit;
         
         private Vector3 previousHandlePosition;
         private Quaternion previousObjectRotation;
+        private Vector3 previouseObjectPosition;
         private IXRSelectInteractor m_handController;
+
+        private float powerRatio = 0;
 
         void Start()
         {
@@ -25,6 +30,7 @@ using UnityEngine.XR.Interaction.Toolkit;
             base.OnSelectEntered(args);
             m_handController = interactorsSelecting[0];
             previousHandlePosition = transform.position;
+            previouseObjectPosition = rotatingObject.position;
             previousObjectRotation = rotatingObject.rotation;
         }
 
@@ -32,46 +38,54 @@ using UnityEngine.XR.Interaction.Toolkit;
         {
             base.OnSelectExited(args);
             m_handController = null;
+            rotatingObject.position = previouseObjectPosition;
         }
 
         public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
         {
             base.ProcessInteractable(updatePhase);
-            
             if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
                 if (!isSelected)
                 {
                     return;
                 }
-                
                 if (rotatingObject != null)
                 {
-                    RotateAroundAnchor(); 
+                    RotateAroundAnchor();
                 }
             }
         }
 
         private void RotateAroundAnchor()
         {
+            Vector3 controllerPosition = m_handController.transform.position;
+            Vector3 prevHandleRelativePosition = previousHandlePosition - previouseObjectPosition;
+            Vector3 handleRelativePosition = controllerPosition - previouseObjectPosition;
+            
             // Calculate the rotation wrt the controller
-            var position = rotatingObject.position;
-            Vector3 previousDirection = previousHandlePosition - position;
-            Vector3 currentDirection = m_handController.transform.position - position;
-
+            Vector3 previousDirection = prevHandleRelativePosition;
+            previousDirection.y = 0;
+            Vector3 currentDirection = handleRelativePosition;
+            currentDirection.y = 0;
+            
             Quaternion rotationToApply = Quaternion.FromToRotation(previousDirection, currentDirection);
             rotatingObject.rotation = rotationToApply * previousObjectRotation;
             
-            CorrectRotation();
+            // calculate correct translation
+            float translateRatio = Vector3.Dot(currentDirection,  previousDirection.normalized) - 
+                                   Vector3.Dot(previousDirection,  previousDirection.normalized);
+            powerRatio = translateRatio + 0.5f;
+            translateRatio *= 0.7f;
+
+            Vector3 translationToApply = translateRatio * previousDirection.normalized;
+            rotatingObject.position = previouseObjectPosition + translationToApply;
+            
         }
-        
-        // Correct the rotation around y-axis
-        private void CorrectRotation()
+
+        public float GetPowerRatio()
         {
-            // trying to correct rotation while preserving pitch, will fix later
-            // Vector3 currentUp = rotatingObject.up;
-            // Quaternion correctiveRotation = Quaternion.FromToRotation(currentUp, Vector3.up);
-            // rotatingObject.rotation = correctiveRotation * rotatingObject.rotation;
+            return powerRatio;
         }
     }
     

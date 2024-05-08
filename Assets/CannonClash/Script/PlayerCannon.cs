@@ -7,11 +7,12 @@ public class PlayerCannon : MonoBehaviour
 {
     public GameObject Cannonball;
     public Transform Shotpoint;
-    public float Blastpower = 40;
+    [SerializeField] float Blastpower = 40;
     [SerializeField] AudioSource cannonAudioSource;
     [SerializeField] ParticleSystem m_ShootingSmokeEffect;
     private ParticleSystem m_smokeParticleSystem;
     [SerializeField] private boat m_Boat;
+    [SerializeField] private Handle m_handle;
 
     private bool ammoLimit = false;
     public void Start()
@@ -23,13 +24,25 @@ public class PlayerCannon : MonoBehaviour
         }
         var psMain = m_smokeParticleSystem.main; 
         psMain.stopAction = ParticleSystemStopAction.None;
+        
         if (m_Boat == null)
         {
             m_Boat = gameObject.GetComponentInParent<boat>();
         }
+        
         if (m_Boat != null)
         {
             ammoLimit = true;
+        }
+        
+        if (cannonAudioSource == null)
+        {
+            cannonAudioSource = GetComponent<AudioSource>();
+        }
+
+        if (m_handle == null)
+        {
+            m_handle = GetComponentInChildren<Handle>();
         }
     }
 
@@ -45,7 +58,9 @@ public class PlayerCannon : MonoBehaviour
         m_smokeParticleSystem.Play();
         GameObject createcannonball = Instantiate(Cannonball, Shotpoint.position, Shotpoint.rotation);
         createcannonball.GetComponent<CannonBall>().Catch();
-        createcannonball.GetComponent<Rigidbody>().velocity = Shotpoint.transform.up * Blastpower;
+        float power = Blastpower * m_handle.GetPowerRatio();
+        createcannonball.GetComponent<Rigidbody>().velocity = Shotpoint.transform.up * power;
+        Debug.Log(power);
         if (ammoLimit)
         {
             m_Boat.decreAmmo();
