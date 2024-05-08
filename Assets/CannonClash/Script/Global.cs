@@ -105,32 +105,32 @@ public class Global : MonoBehaviour
             float number = 0;
             if (posZ == 2)
             {
-                number = Random.Range(9.5f, 10f);
+                number = Random.Range(8.5f, 9f);
                 
             }
             else if (posZ==3)
             {
-                number = Random.Range(13.5f, 14f);
+                number = Random.Range(12.5f, 13f);
             }
             else if (posZ == 4)
             {
-                number = Random.Range(16.5f, 17f);
+                number = Random.Range(14.5f, 15f);
             }
             else if (posZ == 5)
             {
-                number = Random.Range(18.5f, 19f);
+                number = Random.Range(17.5f, 18f);
             }
             else if(posZ == 6)
             {
-                number = Random.Range(20.5f, 21f);
+                number = Random.Range(19.5f, 20f);
             }
             else if (posZ == 7)
             {
-                number = Random.Range(22.5f, 23f);
+                number = Random.Range(21.5f, 22f);
             }
             else if (posZ == 8)
             {
-                number = Random.Range(24.5f, 25f);
+                number = Random.Range(23.5f, 24f);
             }
             p.setpirateshotpower(number);
             p.dir = 1f;
@@ -157,32 +157,32 @@ public class Global : MonoBehaviour
             float number = 0;
             if (posZ == 2)
             {
-                number = Random.Range(9.5f, 10f);
+                number = Random.Range(8.5f, 9f);
 
             }
             else if (posZ == 3)
             {
-                number = Random.Range(13.5f, 14f);
+                number = Random.Range(12.5f, 13f);
             }
             else if (posZ == 4)
             {
-                number = Random.Range(16.5f, 17f);
+                number = Random.Range(14.5f, 15f);
             }
             else if (posZ == 5)
             {
-                number = Random.Range(18.5f, 19f);
+                number = Random.Range(17.5f, 18f);
             }
             else if (posZ == 6)
             {
-                number = Random.Range(20.5f, 21f);
+                number = Random.Range(19.5f, 20f);
             }
             else if (posZ == 7)
             {
-                number = Random.Range(22.5f, 23f);
+                number = Random.Range(21.5f, 22f);
             }
             else if (posZ == 8)
             {
-                number = Random.Range(24.5f, 25f);
+                number = Random.Range(23.5f, 24f);
             }
             p.setpirateshotpower(number);
             p.dir = -1f;

@@ -31,7 +31,7 @@ public class CannonBall : MonoBehaviour
             Die();
         }
 
-        if (collision.gameObject.CompareTag("PirateMinion"))
+        if (m_IsCatched && collision.gameObject.CompareTag("PirateMinion"))
         {
             // Hit Pirate Minion
             // adjust audio source location and on-hit explosion spawn location accordingly

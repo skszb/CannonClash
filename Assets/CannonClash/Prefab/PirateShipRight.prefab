@@ -1908,14 +1908,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4842330569803252007}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1131354, y: -0.68539906, z: 0.13213255, w: 0.7070853}
+  m_LocalRotation: {x: -0.22845633, y: -0.654127, z: 0.24361445, w: 0.6786587}
   m_LocalPosition: {x: -2.549, y: -3.632, z: -12.693}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7561004260967905732}
   m_Father: {fileID: 7678822598994227738}
-  m_LocalEulerAnglesHint: {x: 1.211, y: -88.002, z: 20}
+  m_LocalEulerAnglesHint: {x: 0.494, y: -87.716, z: 39.018}
 --- !u!33 &5533619040991381492
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3933,14 +3933,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8113389937081999549}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1131354, y: -0.68539906, z: 0.13213255, w: 0.7070853}
+  m_LocalRotation: {x: -0.22845633, y: -0.654127, z: 0.24361445, w: 0.6786587}
   m_LocalPosition: {x: -0.868, y: -3.686, z: -12.719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2235734045665286366}
   m_Father: {fileID: 7678822598994227738}
-  m_LocalEulerAnglesHint: {x: 1.211, y: -88.002, z: 20}
+  m_LocalEulerAnglesHint: {x: 0.494, y: -87.716, z: 39.018}
 --- !u!33 &8236540902056427827
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4358,14 +4358,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8835857262192373299}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1131354, y: -0.68539906, z: 0.13213255, w: 0.7070853}
+  m_LocalRotation: {x: -0.22845633, y: -0.654127, z: 0.24361445, w: 0.6786587}
   m_LocalPosition: {x: 0.804, y: -3.696, z: -12.761}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3091501422583440739}
   m_Father: {fileID: 7678822598994227738}
-  m_LocalEulerAnglesHint: {x: 1.211, y: -88.002, z: 20}
+  m_LocalEulerAnglesHint: {x: 0.494, y: -87.716, z: 39.018}
 --- !u!33 &7529132410300205187
 MeshFilter:
   m_ObjectHideFlags: 0
